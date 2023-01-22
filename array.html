@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arrayKosong = [];
+        let arrayNama = ["Muhammad", "Asygar", "Faeruddin"];
+
+        arrayKosong[0] = "Hello ";
+        arrayKosong[1] = "World ";
+        arrayKosong.push("Belajar");
+        arrayKosong.push("Java Script");
+
+        console.table(arrayKosong);
+        document.writeln(arrayKosong[0]+arrayKosong[1]);
+
+        arrayKosong[3] = "Java";
+        arrayKosong[2] = "Pelajar";
+        delete arrayKosong[0];
+        console.table(arrayKosong);
+    </script>
+</body>
+</html>

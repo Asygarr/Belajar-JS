@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const orang = {};
+        orang["Nama"] = "Muhammad Asygar Faeruddin";
+        orang["Alamat"] = "Indonesia";
+        orang["Umur"] = 19;
+
+        console.table(orang);
+
+        const person = {
+            nama: "Muhammad Asygar Faeruddin",
+            alamat: "indonesia",
+            umur: 19
+        };
+
+        console.table(person);
+
+        console.info(`nama : ${person.nama}`);
+        console.info(`alamat : ${person.alamat}`);
+        console.info(`umur : ${person["umur"]}`);
+    </script>
+</body>
+</html>

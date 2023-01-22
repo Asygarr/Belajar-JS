@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // num = 5;
+        // if(5 == "5" && num === "5") {
+        //     document.writeln("true");
+        // } else {
+        //     document.writeln("false");
+        // }
+
+        // if(5 == "5" || num === "5") {
+        //     document.writeln("true");
+        // } else {
+        //     document.writeln("false");
+        // }
+
+        const nilaiUjian = 75;
+        const nilaiAbsen = 70;
+
+        const lulusUjian = nilaiUjian >= 75;
+        const lulusAbsen = nilaiAbsen >= 75;
+
+        const lulus = lulusUjian && lulusAbsen;
+        document.writeln("<p>" + lulus + "<p>");
+
+
+        const NilaiUjian = 75;
+        const NilaiAbsen = 70;
+
+        const LulusUjian = NilaiUjian >= 75;
+        const LulusAbsen = NilaiAbsen >= 75;
+
+        const Lulus = LulusUjian || LulusAbsen;
+        document.writeln("<p>" + Lulus + "<p>");
+    </script>
+</body>
+</html>
