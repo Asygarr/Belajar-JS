@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const sayHello = (value) => {
+        const say = `<p>Hello ${name}<p>`;
+        document.writeln(say);
+      };
+      sayHello("Asygar");
+
+      const arit = (value) => {
+        let data = 1;
+        for (let i = 1; i < 5; i++) {
+          data += i;
+        }
+        return data;
+      };
+      document.writeln(arit(5));
+
+      const fullName = (name) => document.writeln(`<p>Hello ${name}<p>`);
+      fullName("Muhammad Asygar Faeruddin");
+
+      const sum = (first, second) => (first += second);
+      document.writeln(sum(100, 200));
+      document.writeln(sum(300, 200));
+
+      function giveMeName(callback) {
+        callback("garr");
+      }
+      giveMeName((name) => document.writeln(`<p>Hello World<p>`));
+
+      // commit 6:40:57
+    </script>
+  </body>
+</html>
