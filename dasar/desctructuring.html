@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // dengan array
+      /*const names = ["Muhammad", "Asygar", "Faeruddin", "Jokowi", "Widodo"];
+
+      const [firstName, middleName, lastName, ...others] = names;
+
+      console.info(firstName);
+      console.info(middleName);
+      console.info(lastName);
+      console.info(others);*/
+
+      // dengan object
+      const person = {
+        firstName: "Muhammad",
+        middleName: "Asygar",
+        lastName: "Faeruddin",
+        address: {
+          street: "Jl. Abdul Kadir 2",
+          city: "Makassar",
+          country: "Indonesia",
+        },
+        hobby: "Game",
+        cita_cita: "Programmer",
+      };
+
+      const {
+        firstName,
+        middleName,
+        lastName,
+        address: { country, city, street },
+        ...others
+      } = person;
+      console.info(firstName);
+      console.info(middleName);
+      console.info(lastName);
+      console.info(street);
+      console.info(city);
+      console.info(country);
+      console.info(others);
+
+      function printPerson({ firstName, middleName, lastName }) {
+        console.info(`${firstName} ${middleName} ${lastName}`);
+      }
+
+      printPerson(person);
+    </script>
+  </body>
+</html>
