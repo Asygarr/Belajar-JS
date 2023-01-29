@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class employee {}
+
+      class manager extends employee {}
+
+      const budi = new employee();
+      const gar = new manager();
+
+      console.info(budi instanceof employee);
+      console.info(budi instanceof manager);
+      console.info(gar instanceof employee);
+      console.info(gar instanceof manager);
+    </script>
+  </body>
+</html>
