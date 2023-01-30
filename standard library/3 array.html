@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array = ["Muhammad", "Asygar", "Faeruddin"];
+
+      array.forEach((element) => {
+        console.info(element);
+      });
+      array.forEach((element, index) => {
+        console.info(`${index}: ${element}`);
+      });
+
+      // queue
+      const queue = [];
+
+      queue.push("Muhammad");
+      queue.push("Asygar");
+      queue.push("Faeruddin");
+
+      console.info(queue.shift());
+      console.info(queue.shift());
+      console.info(queue.shift());
+
+      // stack
+      const stack = [];
+      stack.push("Muhammad");
+      stack.push("Asygar");
+      stack.push("Faeruddin");
+
+      console.info(stack.pop());
+      console.info(stack.pop());
+      console.info(stack.pop());
+
+      // search
+      const search = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5];
+
+      console.info(search.find((value) => value > 3));
+      console.info(search.findIndex((value) => value > 7));
+      console.info(search.includes(5));
+      console.info(search.includes(50));
+      console.info(search.indexOf(6));
+      console.info(search.lastIndexOf(2));
+
+      // filter
+      const filter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5];
+
+      console.info(filter.filter((value) => value % 2 === 1));
+      console.info(filter.filter((value) => value % 2 === 0));
+
+      // transform
+      const name = "Muhammad Asygar Faeruddin".split(" ");
+      console.info(name.map((value) => value.toUpperCase()));
+      const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      console.info(
+        name.reduce((accumulator, value) => accumulator + " " + value)
+      );
+      console.info(
+        name.reduceRight((accumulator, value) => accumulator + " " + value)
+      );
+
+      console.info(number.reduce((accumulator, value) => accumulator + value));
+    </script>
+  </body>
+</html>
