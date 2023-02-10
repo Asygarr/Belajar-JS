@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan DOM</title>
+    <style>
+      body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+
+      .biru-muda {
+        background-color: lightblue;
+      }
+
+      .kotak {
+        width: 25px;
+        height: 25px;
+        margin: 10px auto;
+      }
+
+      .merah {
+        background-color: red;
+      }
+
+      .hijau {
+        background-color: green;
+      }
+
+      .biru {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bermain dengan warna</h1>
+    <button id="tombol">Ganti Warna</button>
+
+    <br /><br />
+
+    <div class="kotak merah"></div>
+    <input type="range" name="sMerah" min="0" max="255" />
+
+    <div class="kotak hijau"></div>
+    <input type="range" name="sHijau" min="0" max="255" />
+
+    <div class="kotak biru"></div>
+    <input type="range" name="sBiru" min="0" max="255" />
+
+    <script>
+      const tombol = document.getElementById("tombol");
+      const body = document.getElementsByTagName("body")[0];
+      tombol.addEventListener("click", function () {
+        // body.style.backgroundColor = "lightblue";
+        // body.setAttribute("class", "biru-muda");
+        body.classList.toggle("biru-muda");
+      });
+
+      const tombolRand = document.createElement("button");
+      const isiTombolBaru = document.createTextNode("Random Warna");
+      tombolRand.appendChild(isiTombolBaru);
+      tombolRand.setAttribute("id", "random");
+      tombol.after(tombolRand);
+      //   body.appendChild(tombolRand);
+
+      const tRand = document.getElementById("random");
+      tRand.addEventListener("click", function () {
+        const r = Math.round(Math.random() * 255 + 1);
+        const g = Math.round(Math.random() * 255 + 1);
+        const b = Math.round(Math.random() * 255 + 1);
+        body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+
+      const sMerah = document.querySelector("input[name=sMerah]");
+      const sHijau = document.querySelector("input[name=sHijau]");
+      const sBiru = document.querySelector("input[name=sBiru]");
+      function ubahWarna() {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      }
+      sMerah.addEventListener("input", ubahWarna);
+      sHijau.addEventListener("input", ubahWarna);
+      sBiru.addEventListener("input", ubahWarna);
+
+      body.addEventListener("mousemove", function (even) {
+        const xPos = Math.round((event.clientX / window.innerWidth) * 255);
+        const yPos = Math.round((event.clientY / window.innerWidth) * 255);
+        body.style.backgroundColor = "rgb(" + xPos + "," + yPos + ", 100)";
+      });
+    </script>
+  </body>
+</html>

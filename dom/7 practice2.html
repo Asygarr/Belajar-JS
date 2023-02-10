@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        line-height: 0;
+      }
+
+      body {
+        text-align: center;
+      }
+
+      .container {
+        margin: 10px auto;
+        width: 605px;
+        border: 3px solid black;
+        overflow: auto;
+      }
+
+      img {
+        width: 600px;
+        height: 400px;
+      }
+
+      .thumb {
+        width: 200px;
+        height: 150px;
+        float: left;
+        border: 2px solid white;
+      }
+
+      .thumb:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+      }
+
+      .active {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=1000&q=60"
+        class="jumbo"
+      />
+      <div class="thumbnail">
+        <img
+          src="https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=1000&q=60"
+          class="thumb"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1676015361689-3b15f98328b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=1000&q=60"
+          class="thumb"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1675981004381-6305f7dd07fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=60"
+          class="thumb"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=60"
+          class="thumb"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1675969269040-11fa003de158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=60"
+          class="thumb"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1675789652914-5746471074b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMnx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=60"
+          class="thumb"
+        />
+      </div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const thumb = document.querySelectorAll(".thumb");
+
+      container.addEventListener("click", function (e) {
+        if (e.target.className == "thumb") {
+          document.querySelector(".jumbo").src = e.target.src;
+          document.querySelector(".jumbo").classList.add("fade");
+
+          setTimeout(function () {
+            document.querySelector(".jumbo").classList.remove("fade");
+          }, 500);
+
+          thumb.forEach(function (thumb) {
+            if (thumb.classList.contains("active")) {
+              thumb.classList.remove("active");
+            }
+          });
+
+          e.target.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>
